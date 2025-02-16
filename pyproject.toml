@@ -1,0 +1,13 @@
+[project]
+name = "taller-2"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "fastapi>=0.95.1",
+    "uvicorn>=0.22.0",
+    "numpy>=1.23.0",
+    "joblib>=1.2.0",
+    "scikit-learn>=1.2.2",
+    "pandas>=1.5.3"]
