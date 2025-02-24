@@ -1,10 +1,20 @@
-FROM python:3.9
-RUN mkdir /work
-WORKDIR /work
-COPY . .
-RUN python -m pip install --upgrade pip
-RUN pip install -r requirements.txt
-RUN pip install apache-beam[interactive]==2.45.0
-RUN pip install jupyter==1.0.0 -U && pip install jupyterlab==3.6.1
+# Usar una imagen base con TensorFlow 2.14 y Python 3.9
+FROM jupyter/tensorflow-notebook:python-3.9
+
+# Asegurar que Python es 3.9 o 3.10
+RUN python --version
+
+# Establecer el directorio de trabajo
+WORKDIR /app
+
+# Copiar el archivo de dependencias
+COPY requirements.txt /tmp/
+
+# Instalar dependencias
+RUN pip install --no-cache-dir -r /tmp/requirements.txt
+
+# Exponer el puerto de Jupyter Lab
 EXPOSE 8888
-ENTRYPOINT ["jupyter", "lab","--ip=0.0.0.0","--allow-root"]
+
+# Comando por defecto para iniciar el contenedor en modo desarrollo
+CMD ["start-notebook.sh", "--NotebookApp.token=''", "--NotebookApp.password=''"]

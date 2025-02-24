@@ -1,19 +1,17 @@
-version: '3.8'
+version: '3.9'
 
 services:
-  tfx_custom:
-    build: .
-    container_name: tfx_custom
-    environment:
-      - TZ=America/Bogota
+  jupyter:
+    build:
+      context: .
+    container_name: mlops_jupyter
     ports:
       - "8888:8888"
     volumes:
-      - .:/work
-    stdin_open: true
-    tty: true
-    restart: "no"
-    
+      - ./work:/app
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+    command: ["start-notebook.sh", "--NotebookApp.token=''", "--NotebookApp.password=''"]
 
 
 
