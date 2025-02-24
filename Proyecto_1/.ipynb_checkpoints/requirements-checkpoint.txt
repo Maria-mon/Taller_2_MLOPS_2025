@@ -1,3 +1,0 @@
-tfx==1.16.0
-apache-beam==2.47.0
-numpy
