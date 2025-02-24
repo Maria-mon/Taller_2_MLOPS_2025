@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  tfx_custom:
+    build: .
+    container_name: tfx_custom
+    environment:
+      - TZ=America/Bogota
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/work
+    stdin_open: true
+    tty: true
+    restart: "no"
+    
+
+
+
+
