@@ -43,7 +43,7 @@ def load_data():
 with DAG(
     dag_id="load_penguins",
     start_date=datetime(2025, 3, 8),
-    schedule_interval="@daily",
+    schedule_interval="@once",
     catchup=False
 ) as dag:
     load_task = PythonOperator(
