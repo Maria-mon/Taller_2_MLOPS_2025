@@ -1,0 +1,6 @@
+# Ignorar logs y archivos innecesarios
+logs/
+__pycache__/
+.env
+*.pyc
+.DS_Store
