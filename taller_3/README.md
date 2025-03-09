@@ -1,9 +1,7 @@
-# Proyecto ETL y Modelado con Airflow y Docker Compose
+## Proyecto ETL y Modelado con Airflow y Docker Compose
 
-Integrantes: 
-
-María del Mar Montenegro
-Andrés David Gomez Bautista
+Integrantes: María del Mar Montenegro,
+Andrés David Gomez Bautista,
 Juan Felipe Forero Bocanegra
 
 Este proyecto implementa un pipeline completo que:
@@ -15,8 +13,6 @@ Este proyecto implementa un pipeline completo que:
 - **Expone** una API para realizar inferencias.
 
 Todos los servicios se orquestan en un único archivo Docker Compose.
-
----
 
 ## Servicios
 
@@ -33,7 +29,6 @@ Todos los servicios se orquestan en un único archivo Docker Compose.
 - **API (Flask)**  
   Servicio expuesto en el puerto 5000 para realizar inferencias a través del endpoint `/predict`.
 
----
 
 ## Instrucciones de Uso
 
@@ -44,7 +39,10 @@ Todos los servicios se orquestan en un único archivo Docker Compose.
    ```bash
    docker-compose up --build -d
    ```
-2.1 Iniciar los contenedores: docker start taller_3-airflow-webserver-1 taller_3-airflow-scheduler-1 taller_3-airflow-worker-1 
+2.1 Iniciar los contenedores:
+   ```bash
+   docker start taller_3-airflow-webserver-1 taller_3-airflow-scheduler-1 taller_3-airflow-worker-1
+   ```
 
 3. **Acceder a Airflow:**  
    - Interfaz web disponible en [http://localhost:9090](http://localhost:9090).
@@ -76,7 +74,6 @@ Todos los servicios se orquestan en un único archivo Docker Compose.
     }
 
 
----
 
 ## Consideraciones
 
